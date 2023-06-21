@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Landing Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f1f1f1;
+    }
+    
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 20px;
+      
+    }
+    .bolded { font-weight: bold; }
+    .box {
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .flex-container {
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    h1 {
+      margin-top: 0;
+    }
+    
+    #audio-player {
+      flex-basis: 70%;
+    }
+    
+    #audio-description {
+      flex-basis: 30%;
+      text-align: left;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    th,
+    td {
+      padding: 10px;
+      border: 1px solid #fff;
+    }
+    
+    .transparent {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box">
+      <h2>HARMONYCLOAK: Making Music Unlearnable for Generative AI</h2>
+      <p><span class="bolded">Abstract:</span> In recent years, the evaluation of generative AI has taken a giant stride toward art and music. This advancement paved the way for new possibilities and expanded the creative domain. Musicians face a predicament as AI algorithms can replicate their styles, raising concerns about the devaluation of their work and the overshadowing of individual artists. The pressure to conform to AI-generated trends, copyright complexities, and the absence of emotional connection in AI creations pose challenges to the authenticity and credibility of real artists in the face of the AI revolution. In this paper, we propose the first defense system, namely HARMONYCLOAK, against generative AIs in the music domain. HARMONYCLOAK aims to disguise music as random signals to deceive generative AI models. At its core, HARMONYCLOAK employs optimized inaudible noise that disrupts the note structure and rhythm of the music. By applying this technique, HARMONYCLOAK alters the musical composition in a way that confounds generative AI algorithms. We empirically verify the effectiveness of HARMONYCLOAK in both black box and white box settings. We also demonstrate its flexibility under extensive experimental settings and practicability in music generation. Our work establishes an important first step towards making music unlearnable to the generative models.      </p>
+    </div>
+    
+    <div class="box">
+      <h2>Training Samples</h2>
+      <table class="transparent">
+        <tr>
+          <td>
+            <div id="audio-player">
+              <h2></h2>
+              <audio controls>
+                <source src="website\output_clean_black.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </td>
+          <td>
+            <div id="audio-description">
+              <p>Original Music from <a href="https://colinraffel.com/projects/lmd/">Lakh MIDI Dataset</a>.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div id="audio-player">
+              <h2></h2>
+              <audio controls>
+                <source src="website\output_adv_black.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </td>
+          <td>
+            <div id="audio-description">
+              <p>Cloaked Music (White Box).</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div id="audio-player">
+              <h2></h2>
+              <audio controls>
+                <source src="website\output_adv_black.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </td>
+          <td>
+            <div id="audio-description">
+              <p>Cloaked Music (Black Box).</p>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="box">
+      <h2>Generated Samples (MuseGAN)</h2>
+      <table class="transparent">
+        <tr>
+          <td>
+            <div id="audio-player">
+              <h2></h2>
+              <audio controls>
+                <source src="website\Clean MuseGAN.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </td>
+          <td>
+            <div id="audio-description">
+              <p>MuseGAN trained with original music</a>.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div id="audio-player">
+              <h2></h2>
+              <audio controls>
+                <source src="website\adv_MuseGAN.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </td>
+          <td>
+            <div id="audio-description">
+              <p>MuseGAN trained with Cloaked Music (White Box).</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div id="audio-player">
+              <h2></h2>
+              <audio controls>
+                <source src="" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </td>
+          <td>
+            <div id="audio-description">
+              <p>MuseGAN trained with Cloaked Music (Black Box).</p>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="box">
+      <h2>Generated Samples (SymphonyNet)</h2>
+      <table class="transparent">
+        <tr>
+          <td>
+            <div id="audio-player">
+              <h2></h2>
+              <audio controls>
+                <source src="website\Clean_SymphonyNet.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </td>
+          <td>
+            <div id="audio-description">
+              <p>SymphonyNet trained with original music</a>.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div id="audio-player">
+              <h2></h2>
+              <audio controls>
+                <source src="website\adv_SymphonyNet.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </td>
+          <td>
+            <div id="audio-description">
+              <p>SymphonyNet trained with Cloaked Music (White Box).</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div id="audio-player">
+              <h2></h2>
+              <audio controls>
+                <source src="" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </td>
+          <td>
+            <div id="audio-description">
+              <p>SymphonyNet trained with Cloaked Music (Black Box).</p>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
